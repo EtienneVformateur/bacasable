@@ -113,6 +113,14 @@ class Bacasable_Admin {
 		);
 	}
 
-	
+	public function badgeuse_post(){
+		global $wpdb;
+		$table = $wpdb->prefix.'badgeuse';
+		$current_time = current_time( 'mysql' );
+		$id = $_POST['id'] ; 
+		$data = array('user'=>$id, 'date'=>$current_time);
+		$wpdb->insert($table,$data);
+		wp_redirect(admin_url('admin.php?page=BACASABLE%2Fincludes%2Fbadgeuse_Menu_admin.php'));
+	}
 
 }

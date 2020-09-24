@@ -158,7 +158,7 @@ class Bacasable {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 		$this->loader->add_filter( 'the_title', $plugin_admin, 'wporg_filter_title' );
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'badgeuse_Menu_admin' );
-		
+		$this->loader->add_action( 'admin_post_badgeuse_form', $plugin_admin, 'badgeuse_post' );
 	}
 
 	/**
